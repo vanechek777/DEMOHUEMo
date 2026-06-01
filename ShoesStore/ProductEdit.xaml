@@ -1,0 +1,75 @@
+﻿<Window x:Class="ShoesStore.ProductEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShoesStore"
+        mc:Ignorable="d"
+        Title="ProductEdit" Height="450" Width="800">
+    <DockPanel Margin="10">
+        <TextBlock Text="Добавить товар" FontSize="20" FontFamily="Times New Roman" DockPanel.Dock="Top" x:Name="title"></TextBlock>
+        <Grid DockPanel.Dock="Top" Margin="0 10" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="0 10 0 0">
+                <Image Source="/Resources/picture.png" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="prodImage"></Image>
+                <Button Width="200" HorizontalAlignment="Left" Margin="0 10 0 0" Content="Изменить фото" x:Name="ChangeImage"></Button>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Наименование: " Margin="0 0 10 0"></TextBlock>
+                            <TextBox Height="22" x:Name="productName"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Артикул: " Margin="0 0 10 0" VerticalAlignment="Center"></TextBlock>
+                            <TextBox Height="22" x:Name="prodArticle"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Тип: " Margin="0 0 10 0"></TextBlock>
+                            <ComboBox x:Name="prodType"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Поставщик: " Margin="0 0 10 0"></TextBlock>
+                            <ComboBox x:Name="prodSupp"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Изготовитель: " Margin="0 0 10 0"></TextBlock>
+                            <ComboBox x:Name="prodManuf"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Категория: " Margin="0 0 10 0"></TextBlock>
+                            <ComboBox x:Name="prodCat"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Скидка: " Margin="0 0 10 0"></TextBlock>
+                            <TextBox Height="22" x:Name="prodDiscount"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Количество на складе: " Margin="0 0 10 0"></TextBlock>
+                            <TextBox Height="22" x:Name="prodCount"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Описание: " Margin="0 0 10 0"></TextBlock>
+                            <TextBox TextWrapping="Wrap" AcceptsReturn="True" x:Name="prodDescription"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+                
+            </StackPanel>
+        </Grid>
+        <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="10 10">
+            <Button Content="Отмена" Margin="0 0 10 0" x:Name="Cancel"></Button>
+            <Button Content="Сохранить" x:Name="Save"></Button>
+        </StackPanel>
+    </DockPanel>
+</Window>

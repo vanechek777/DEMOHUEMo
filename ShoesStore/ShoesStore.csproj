@@ -35,8 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +62,82 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Catalog.xaml.cs">
+      <DependentUpon>Catalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>ShoesStoreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>ShoesStoreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manufacturer.cs">
+      <DependentUpon>ShoesStoreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.xaml.cs">
+      <DependentUpon>Order.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrderCard.xaml.cs">
+      <DependentUpon>OrderCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrderEdit.xaml.cs">
+      <DependentUpon>OrderEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrderItem.cs">
+      <DependentUpon>ShoesStoreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Orderr.cs">
+      <DependentUpon>ShoesStoreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PickUpPoint.cs">
+      <DependentUpon>ShoesStoreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>ShoesStoreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCard.xaml.cs">
+      <DependentUpon>ProductCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProductEdit.xaml.cs">
+      <DependentUpon>ProductEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProductType.cs">
+      <DependentUpon>ShoesStoreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>ShoesStoreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShoesStoreData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoesStoreData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShoesStoreData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoesStoreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ShoesStoreData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoesStoreData.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Status.cs">
+      <DependentUpon>ShoesStoreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>ShoesStoreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ShoesStoreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>ShoesStoreData.tt</DependentUpon>
+    </Compile>
+    <Page Include="Catalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +150,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Order.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrderCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrderEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProductCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProductEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -86,13 +189,50 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <EntityDeploy Include="ShoesStoreData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ShoesStoreData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ShoesStoreData.edmx.diagram">
+      <DependentUpon>ShoesStoreData.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1.jpg" />
+    <Resource Include="Resources\10.jpg" />
+    <Resource Include="Resources\2.jpg" />
+    <Resource Include="Resources\3.jpg" />
+    <Resource Include="Resources\4.jpg" />
+    <Resource Include="Resources\5.jpg" />
+    <Resource Include="Resources\6.jpg" />
+    <Resource Include="Resources\7.jpg" />
+    <Resource Include="Resources\8.jpg" />
+    <Resource Include="Resources\9.jpg" />
+    <Resource Include="Resources\Icon.ico" />
+    <Resource Include="Resources\Icon.JPG" />
+    <Resource Include="Resources\Icon.png" />
+    <Resource Include="Resources\picture.png" />
+    <Content Include="ShoesStoreData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ShoesStoreData.Context.cs</LastGenOutput>
+      <DependentUpon>ShoesStoreData.edmx</DependentUpon>
+    </Content>
+    <Content Include="ShoesStoreData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShoesStoreData.edmx</DependentUpon>
+      <LastGenOutput>ShoesStoreData.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

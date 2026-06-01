@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="ShoesStore.ProductCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShoesStore"
+             mc:Ignorable="d">
+    <Border BorderBrush="Black" BorderThickness="1" Margin="0 0 0 10" Background="#7FFF00" x:Name="cardBack">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="128px"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="200px"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1" VerticalAlignment="Stretch" Grid.Column="0">
+                <StackPanel VerticalAlignment="Stretch">
+                    <Image Source="/Resources/1.jpg" Width="128" x:Name="prodImage"></Image>
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" VerticalAlignment="Stretch" Grid.Column="1">
+                <StackPanel Orientation="Vertical" Margin="10 0" VerticalAlignment="Stretch">
+                    <TextBlock x:Name="prodCatName" Text="Категория товара | Наименование товара" FontWeight="Bold" ></TextBlock>
+                    <TextBlock x:Name="prodDesc" Text="Описание товара:"></TextBlock>
+                    <TextBlock x:Name="prodManuf" Text="Производитель: "></TextBlock>
+                    <TextBlock x:Name="prodSupp" Text="Поставщик: "></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="prodPrice" Text="Цена: "></TextBlock>
+                        <TextBlock x:Name="prodOldPrice" Text="8000" Foreground="Red" TextDecorations="Strikethrough"></TextBlock>
+                    </StackPanel>
+                    <TextBlock x:Name="prodUnit" Text="Ед. измерения: "></TextBlock>
+                    <TextBlock x:Name="prodCount" Text="Количество на складе: "></TextBlock>
+                </StackPanel>
+            </Border>
+            <Grid Grid.Column="2">
+                <WrapPanel Orientation="Vertical" Margin="0 0 0 0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Действующая скидка" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock x:Name="prodDiscount" Text="15%" HorizontalAlignment="Center"></TextBlock>
+                </WrapPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>

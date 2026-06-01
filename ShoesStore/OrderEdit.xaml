@@ -1,0 +1,73 @@
+﻿<Window x:Class="ShoesStore.OrderEdit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShoesStore"
+        mc:Ignorable="d"
+        Title="OrderEdit" Height="450" Width="800">
+    <DockPanel Margin="10">
+        <TextBlock Text="Добавить заказ" FontSize="20" FontFamily="Times New Roman" DockPanel.Dock="Top" x:Name="title"></TextBlock>
+        <Grid DockPanel.Dock="Top" Margin="0 10" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Номер заказа: " Margin="0 0 10 0"></TextBlock>
+                            <TextBox Height="22" x:Name="orderId"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Дата заказа: " Margin="0 0 10 0" VerticalAlignment="Center"></TextBlock>
+                            <DatePicker FontFamily="Times New Roman" Margin="0 2 0 0" x:Name="orderDate"></DatePicker>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Дата доставки: " Margin="0 0 10 0" VerticalAlignment="Center"></TextBlock>
+                            <DatePicker FontFamily="Times New Roman" Margin="0 2 0 0"></DatePicker>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Пункт выдачи: " Margin="0 0 10 0"></TextBlock>
+                            <ComboBox x:Name="prodSupp"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Пользователь: " Margin="0 0 10 0"></TextBlock>
+                            <ComboBox x:Name="prodManuf"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Код: " Margin="0 0 10 0"></TextBlock>
+                            <TextBox Height="22" x:Name="orderCode"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Статус: " Margin="0 0 10 0"></TextBlock>
+                            <ComboBox x:Name="orderStatus"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="0 0 0 5">
+                            <TextBlock Text="Добавить товары"></TextBlock>
+                            <ComboBox x:Name="products"></ComboBox>
+                        </StackPanel>
+                        <ListView Height="170">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Width="380">Товар</GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </StackPanel>
+                </Grid>
+
+            </StackPanel>
+        </Grid>
+        <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="10 10">
+            <Button Content="Отмена" Margin="0 0 10 0" x:Name="Cancel"></Button>
+            <Button Content="Сохранить" x:Name="Save"></Button>
+        </StackPanel>
+    </DockPanel>
+</Window>

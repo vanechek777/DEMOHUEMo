@@ -24,5 +24,40 @@ namespace ShoesStore
         {
             InitializeComponent();
         }
+
+        private void EnterAsGuest_Click(object sender, RoutedEventArgs e)
+        {
+            Catalog cat = new Catalog(1, -1); // запускаем каталог для гостя, вместо роли передаем -1
+            cat.Show();
+            this.Close();
+        }
+
+        private void Enter_Click(object sender, RoutedEventArgs e)
+        {
+            string log = login.Text;
+            string pass = password.Password;
+
+            using (var context = new ShoesStoreEntities())
+            {
+                var user = context.User.FirstOrDefault(x => x.Login == log);
+
+                if (user == null)
+                {
+                    MessageBox.Show("Такой пользователь не существует!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                if (user.Password != pass)
+                {
+                    MessageBox.Show("Неправильный пароль!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
+                int userId = Convert.ToInt32(user.Id);
+                Catalog cat = new Catalog(0, userId); // входит авторизованный пользователь, isGuest = 0, передаем ID пользователя
+                cat.Show();
+                this.Close();
+            }
+        }
     }
 }
